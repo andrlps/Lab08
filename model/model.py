@@ -1,3 +1,5 @@
+import copy
+
 from database.DAO import DAO
 
 
@@ -8,21 +10,21 @@ class Model:
         self._listEvents = None
         self.loadNerc()
 
-
-
     def worstCase(self, nerc, maxY, maxH):
-        # TO FILL
-        pass
+        self.loadEvents(nerc)
+        return self.ricorsione([], maxY, maxH, 0)
+
     def ricorsione(self, parziale, maxY, maxH, pos):
-        # TO FILL
-        pass
+        if pos == len():
+            pass
+        else:
+
 
     def loadEvents(self, nerc):
         self._listEvents = DAO.getAllEvents(nerc)
 
     def loadNerc(self):
         self._listNerc = DAO.getAllNerc()
-
 
     @property
     def listNerc(self):
